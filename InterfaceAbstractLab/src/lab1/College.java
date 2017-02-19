@@ -14,12 +14,36 @@ import java.util.ArrayList;
 public class College {
     
     private Semester semester;
-    private OutputReport report;
     private String name;
+    private Double maxCredits;
+    private OutputReport report;
 
     public College(String name, OutputReport report) {
+       this.report = report; 
+       this.setName(name);
+        
+    }
+    
+    public Double getMaxCredits() {
+        return maxCredits;
+    }
+
+    public void setMaxCredits(Double maxCredits) {
+        if(maxCredits <= 0){
+            throw new IllegalArgumentException("Error: Maximum credits should be greater than zero.");
+        }
+        this.maxCredits = maxCredits;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    private void setName(String name) {
+        if(name == null || name.isEmpty()){
+            throw new IllegalArgumentException("Error: Name of college cannot be a null or empty string.");
+        }
         this.name = name;
-        this.report = report;
     }
 
     public Semester getSemester() {
@@ -27,11 +51,14 @@ public class College {
     }
 
     public void setSemester(Semester semester) {
+        if(semester == null){
+            throw new IllegalArgumentException("Error: Semester cannot be null.");
+        }
         this.semester = semester;
     }
   
-    public void addCourseToSemester(String courseName){
-        this.semester.addCourse(courseName);
-        this.report.addData(courseName + " has been added to the " + this.semester + " semester inventory.");
+    public void addCourseToSemester(Course course){
+        this.semester.addCourse(course);
+        
     }
 }

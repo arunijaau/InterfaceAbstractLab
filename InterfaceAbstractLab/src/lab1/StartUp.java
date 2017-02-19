@@ -13,17 +13,17 @@ public class StartUp {
     public static void main(String[] args) {
         OutputReport report = new OutputReport();
         College wctc = new College("WCTC", report);
-        wctc.setSemester(new Semester("Spring 2017"));
+        wctc.setSemester(new Semester("Spring 2017", report));
         
-        ProgrammingCourse course1 = new IntroToProgrammingCourse("Introduction to Programming", "111-234");
-        ProgrammingCourse course2 = new IntroJavaCourse("Introduction to Java", "123-456"); 
-        ProgrammingCourse course3 = new AdvancedJavaCourse("Advanced Java", "223-456");
+        Course course1 = new IntroToProgrammingCourse("Introduction to Programming", "111-234", wctc);
+        Course course2 = new IntroJavaCourse("Introduction to Java", "123-456", wctc); 
+        Course course3 = new AdvancedJavaCourse("Advanced Java", "223-456", wctc);
         
 //        System.out.println(course1.getCourseName());
         
-        wctc.addCourseToSemester(course1.getCourseName());
-        wctc.addCourseToSemester(course2.getCourseName());
-        wctc.addCourseToSemester(course3.getCourseName());
+        wctc.addCourseToSemester(course1);
+        wctc.addCourseToSemester(course2);
+        wctc.addCourseToSemester(course3);
         report.ShowData();
         
         

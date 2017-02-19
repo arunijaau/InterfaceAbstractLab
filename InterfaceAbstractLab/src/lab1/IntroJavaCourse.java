@@ -6,18 +6,23 @@ package lab1;
  * @author      your name goes here
  * @version     1.00
  */
-public class IntroJavaCourse extends ProgrammingCourse{
-//    String courseName;
+public class IntroJavaCourse extends Course{
+//    private String courseName;
 //    private String courseNumber;
-//    double credits;
+//    private double credits;
     private String prerequisites;
 
-    public IntroJavaCourse(String courseName, String courseNumber) {
-        super(courseName, courseNumber);
+    public IntroJavaCourse(String courseName, String courseNumber, College college) {
+        super(courseName, courseNumber, college);
 //        this.courseName = courseName;
 //        this.courseNumber = courseNumber;
     }
 
+    @Override
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+    
 //    public String getCourseNumber() {
 //        return courseNumber;
 //    }
@@ -29,12 +34,6 @@ public class IntroJavaCourse extends ProgrammingCourse{
 //    public double getCredits() {
 //        return credits;
 //    }
-
-
-    @Override
-    public String getPrerequisites() {
-        return prerequisites;
-    }
 
 //    public void setPrerequisites(String prerequisites) {
 //        this.prerequisites = prerequisites;
