@@ -12,24 +12,23 @@ import java.util.ArrayList;
  * @author ajayasooriya
  */
 public class Semester {
-    private ArrayList<Course> courses;
-    private String semesterName;
-    private OutputReport report;
 
-    public Semester(String semesterName, OutputReport report ) {
+    private final ArrayList<Course> courses;
+    private String semesterName;
+    private final OutputReport report;
+
+    public Semester(String semesterName, OutputReport report) {
         this.report = report;
         this.setSemesterName(semesterName);
-        this.courses = new ArrayList<>(); 
-        
+        this.courses = new ArrayList<>();
     }
 
     public void addCourse(Course course) {
-        if(course == null){
+        if (course == null) {
             throw new IllegalArgumentException("Error: Course cannot be null.");
         }
         courses.add(course);
-        report.addData(course + " has been added to the " + this + " inventory.");
-        
+        report.addData(course + " course has been added to the " + this + " semester inventory.");
     }
 
     public String getSemesterName() {
@@ -37,14 +36,14 @@ public class Semester {
     }
 
     private void setSemesterName(String semesterName) {
-        if(semesterName == null || semesterName.isEmpty()){
+        if (semesterName == null || semesterName.isEmpty()) {
             throw new IllegalArgumentException("Error: Semester Name cannot be null or empty.");
         }
         this.semesterName = semesterName;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return this.semesterName;
     }
 }

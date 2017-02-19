@@ -12,20 +12,19 @@ import javax.swing.JOptionPane;
  * @author ajayasooriya
  */
 public class OutputReport {
+
     private String report;
-    
-    
+
     public OutputReport() {
         this.report = "";
     }
-    
-    public void addData(String data){
+
+    public void addData(String data) {
         this.report += data + "\n";
     }
-    
-    public void ShowData(){
+
+    public void ShowData() {
         JOptionPane.showMessageDialog(null, report);
     }
 
-    
 }

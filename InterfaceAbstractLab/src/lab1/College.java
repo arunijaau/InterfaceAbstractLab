@@ -5,31 +5,28 @@
  */
 package lab1;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author ajayasooriya
  */
 public class College {
-    
+
     private Semester semester;
     private String name;
     private Double maxCredits;
-    private OutputReport report;
+    private final OutputReport report;
 
     public College(String name, OutputReport report) {
-       this.report = report; 
-       this.setName(name);
-        
+        this.report = report;
+        this.setName(name);
     }
-    
+
     public Double getMaxCredits() {
         return maxCredits;
     }
 
     public void setMaxCredits(Double maxCredits) {
-        if(maxCredits <= 0){
+        if (maxCredits <= 0) {
             throw new IllegalArgumentException("Error: Maximum credits should be greater than zero.");
         }
         this.maxCredits = maxCredits;
@@ -40,7 +37,7 @@ public class College {
     }
 
     private void setName(String name) {
-        if(name == null || name.isEmpty()){
+        if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Error: Name of college cannot be a null or empty string.");
         }
         this.name = name;
@@ -51,14 +48,14 @@ public class College {
     }
 
     public void setSemester(Semester semester) {
-        if(semester == null){
+        if (semester == null) {
             throw new IllegalArgumentException("Error: Semester cannot be null.");
         }
         this.semester = semester;
     }
-  
-    public void addCourseToSemester(Course course){
+
+    public void addCourseToSemester(Course course) {
         this.semester.addCourse(course);
-        
+
     }
 }
