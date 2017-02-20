@@ -19,8 +19,8 @@ public abstract class Course {
     private final College college;
 
     public Course(String name, String number, College college) {
-        this.courseName = name;
-        this.courseNumber = number;
+        this.setCourseName(name);
+        this.setCourseNumber(number);
         this.college = college;
     }
 
