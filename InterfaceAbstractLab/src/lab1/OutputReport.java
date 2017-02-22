@@ -24,7 +24,7 @@ public class OutputReport {
     }
 
     public void ShowData() {
-        JOptionPane.showMessageDialog(null, report);
+        System.out.println(report);
     }
 
 }

@@ -11,16 +11,16 @@ package lab2;
  */
 public interface Course {
 
-    public void setCourseName(String courseName);
+    public abstract void setCourseName(String courseName);
 
-    public void setCourseNumber(String courseNumber);
+    public abstract void setCourseNumber(String courseNumber);
 
-    public void setCredits(double credits);
+    public abstract void setCredits(double credits);
 
-    public String getCourseName();
+    public abstract String getCourseName();
 
-    public String getCourseNumber();
+    public abstract String getCourseNumber();
 
-    public double getCredits();
+    public abstract double getCredits();
 
 }
